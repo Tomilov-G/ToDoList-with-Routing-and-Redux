@@ -16,4 +16,6 @@ export const router = createBrowserRouter([
       { path: "list/:id", element: <ViewListItem /> },
     ]
   },
-]);
+], {
+  basename: '/ToDoList-with-Routing-and-Redux'
+});
