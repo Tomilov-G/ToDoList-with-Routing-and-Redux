@@ -1,19 +1,19 @@
 import { ToDoListItem } from "./ToDoListItem/ToDoListItem";
-import "./ToDoList.scss";
 import { ToDo } from "../../models/todo-item";
+import { ToDoListBlock, ToDoListContainer } from "./ToDoList.style";
 
 export const ToDoList = (props: {
   todos: ToDo[];
-  updateToDo: Function;
-  deleteToDo: Function;
+  updateToDo: (props: ToDo) => void;
+  deleteToDo: (props: ToDo) => void;
 }) => {
   const checkedList = () => {
     return props.todos
       .filter((item) => !item.isDone)
-      .map((item, index) => {
+      .map((item) => {
         return (
           <ToDoListItem
-            key={index}
+            key={item.id}
             toDoItem={item}
             updateToDo={props.updateToDo}
             deleteToDo={props.deleteToDo}
@@ -24,10 +24,10 @@ export const ToDoList = (props: {
   const uncheckedList = () => {
     return props.todos
       .filter((item) => item.isDone)
-      .map((item, index) => {
+      .map((item) => {
         return (
           <ToDoListItem
-            key={index}
+            key={item.id}
             toDoItem={item}
             updateToDo={props.updateToDo}
             deleteToDo={props.deleteToDo}
@@ -36,9 +36,9 @@ export const ToDoList = (props: {
       });
   };
   return (
-    <div className="todo-container">
-      <ul className="todo-list failed">{checkedList()}</ul>
-      <ul className="todo-list completed">{uncheckedList()}</ul>
-    </div>
+    <ToDoListContainer>
+      <ToDoListBlock status={"failed"}>{checkedList()}</ToDoListBlock>
+      <ToDoListBlock status={"completed"}>{uncheckedList()}</ToDoListBlock>
+    </ToDoListContainer>
   );
 };

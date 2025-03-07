@@ -1,27 +1,30 @@
-import { useState } from "react";
-import "./Form.scss";
+import { useState, FormEvent} from "react";
+import { FormButton, FormBlock, FormInput, FormLabel, FormWrapper } from "./Form.styled";
+
+import plusIcon from '../../assets/images/plus.png'
 
 export const Form = (props: { createNewToDo: Function }) => {
   const [text, setText] = useState<string | number>("");
 
-  const formSumbit = () => {
+  const formSumbit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
     if (text) {
         props.createNewToDo(text)
         setText('')
     }
   }
   return (
-    <div className="form-wrapper">
-      <form action="#" onSubmit={formSumbit}>
-        <label>
-          <input
+    <FormWrapper>
+      <FormBlock action="#" onSubmit={formSumbit} >
+        <FormLabel>
+          <FormInput
             type="text"
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
-          <button></button>
-        </label>
-      </form>
-    </div>
+          <FormButton $icon={plusIcon} />
+        </FormLabel>
+      </FormBlock>
+    </FormWrapper>
   );
 };
