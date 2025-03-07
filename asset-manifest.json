@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/ToDoList-with-Routing-and-Redux/static/js/main.d519b69c.js",
+    "index.html": "/ToDoList-with-Routing-and-Redux/index.html",
+    "main.d519b69c.js.map": "/ToDoList-with-Routing-and-Redux/static/js/main.d519b69c.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.d519b69c.js"
+  ]
+}
