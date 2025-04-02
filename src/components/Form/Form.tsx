@@ -4,7 +4,7 @@ import { FormButton, FormBlock, FormInput, FormLabel, FormWrapper } from "./Form
 import plusIcon from '../../assets/images/plus.png'
 
 export const Form = (props: { createNewToDo: Function }) => {
-  const [text, setText] = useState<string | number>("");
+  const [text, setText] = useState<string>("");
 
   const formSumbit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()

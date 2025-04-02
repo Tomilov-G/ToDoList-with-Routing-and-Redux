@@ -28,7 +28,7 @@ export const ToDoItemText = styled.span``;
 
 
 export const ToDoItemControls = styled.div`
-  width: 100px;
+  width: 150px;
   height: 50px;
   display: flex;
 

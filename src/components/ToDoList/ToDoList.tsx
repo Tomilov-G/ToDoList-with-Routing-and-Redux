@@ -4,41 +4,41 @@ import { ToDoListBlock, ToDoListContainer } from "./ToDoList.style";
 
 export const ToDoList = (props: {
   todos: ToDo[];
-  updateToDo: (props: ToDo) => void;
-  deleteToDo: (props: ToDo) => void;
+  updateToDo: (todo: ToDo) => void;
+  deleteToDo: (todo: ToDo) => void;
+  changeToDo: (todo: ToDo) => void;
 }) => {
-  const checkedList = () => {
+  const notDoneList = () => {
     return props.todos
       .filter((item) => !item.isDone)
-      .map((item) => {
-        return (
-          <ToDoListItem
-            key={item.id}
-            toDoItem={item}
-            updateToDo={props.updateToDo}
-            deleteToDo={props.deleteToDo}
-          />
-        );
-      });
+      .map((item) => (
+        <ToDoListItem
+          key={item.id}
+          toDoItem={item}
+          changeToDo={props.changeToDo}
+          updateToDo={props.updateToDo}
+          deleteToDo={props.deleteToDo}
+        />
+      ));
   };
-  const uncheckedList = () => {
+
+  const doneList = () => {
     return props.todos
       .filter((item) => item.isDone)
-      .map((item) => {
-        return (
-          <ToDoListItem
-            key={item.id}
-            toDoItem={item}
-            updateToDo={props.updateToDo}
-            deleteToDo={props.deleteToDo}
-          />
-        );
-      });
+      .map((item) => (
+        <ToDoListItem
+          key={item.id}
+          toDoItem={item}
+          updateToDo={props.updateToDo}
+          deleteToDo={props.deleteToDo}
+        />
+      ));
   };
+
   return (
     <ToDoListContainer>
-      <ToDoListBlock status={"failed"}>{checkedList()}</ToDoListBlock>
-      <ToDoListBlock status={"completed"}>{uncheckedList()}</ToDoListBlock>
+      <ToDoListBlock status={"failed"}>{notDoneList()}</ToDoListBlock>
+      <ToDoListBlock status={"completed"}>{doneList()}</ToDoListBlock>
     </ToDoListContainer>
   );
 };
