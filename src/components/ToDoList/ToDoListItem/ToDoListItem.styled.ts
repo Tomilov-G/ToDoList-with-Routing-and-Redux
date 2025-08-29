@@ -5,13 +5,13 @@ export const ToDoItem = styled.li`
   min-height: 50px;
   font-size: 14px;
   font-weight: 500;
-  color: #444;
+  color: ${(props) => props.theme.colors.textPrimary};
   line-height: 22px;
 
   display: flex;
   justify-content: space-between;
 
-  background: #fff;
+  background: ${(props) => props.theme.colors.backgroundSecondary};
   border-radius: 5px;
   position: relative;
   box-shadow: 0 1px 2px rgba(44, 62, 80, 0.1);
@@ -25,7 +25,6 @@ export const ToDoItem = styled.li`
 `;
 
 export const ToDoItemText = styled.span``;
-
 
 export const ToDoItemControls = styled.div`
   width: 150px;
@@ -54,8 +53,8 @@ export const ToDoItemControl = styled.button<{ $icon: string }>`
     content: "";
     width: 1px;
     height: 30px;
-    background: #edf0f1;
-  
+    background: ${(props) => props.theme.colors.border};
+
     position: absolute;
     top: 10px;
     left: 0;

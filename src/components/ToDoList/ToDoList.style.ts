@@ -15,8 +15,9 @@ export const ToDoListBlock = styled.ul<ToDoListBlockProps>`
   margin-bottom: 20px;
   padding-left: 0;
   list-style: none;
+  min-height: 140px;
 
-  ${({ status }) =>
+  ${({ status, theme }) =>
     status === "failed" &&
     `
       &:empty:after {
@@ -25,22 +26,21 @@ export const ToDoListBlock = styled.ul<ToDoListBlockProps>`
         display: block;
         text-align: center;
         font-size: 12px;
-        color: #aaa;
+        color: ${theme.colors.textSecondary};
       }
     `}
 
-  ${({ status }) =>
+  ${({ status, theme }) =>
     status === "completed" &&
     `
       padding: 60px 0 0 0;
-      
       &:empty:after {
         content: "Нет выполненных задач";
         width: 100%;
         display: block;
         text-align: center;
         font-size: 12px;
-        color: #aaa;
+        color: ${theme.colors.textSecondary};
       }
     `}
 `;

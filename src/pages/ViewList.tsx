@@ -6,10 +6,13 @@ import { RootState } from "../store";
 export const ViewList = () => {
   const toDoList = useSelector((state: RootState) => state.toDoList.todos);
   return (
-    <div className="container">
-      {toDoList.map((todo: ToDo) => (
-        <ListItem todo={todo} key={todo.id} />
-      ))}
-    </div>
+    <>
+      <h3 className="title">Общий список задач</h3>
+      <div className="container">
+        {toDoList.map((todo: ToDo) => (
+          <ListItem todo={todo} key={todo.id} />
+        ))}
+      </div>
+    </>
   );
 };

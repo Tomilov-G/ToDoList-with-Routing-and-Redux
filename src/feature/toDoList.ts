@@ -48,9 +48,18 @@ export const toDoSlice = createSlice({
       );
       state.todos = newTodos;
     },
+    clearCompleted: (state) => {
+      state.todos = state.todos.filter((t) => !t.isDone);
+    },
   },
 });
 
-export const { createAction, updateAction, deleteAction, editAction} = toDoSlice.actions;
+export const {
+  createAction,
+  updateAction,
+  deleteAction,
+  editAction,
+  clearCompleted,
+} = toDoSlice.actions;
 
 export default toDoSlice.reducer;
