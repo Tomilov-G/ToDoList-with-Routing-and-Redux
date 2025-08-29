@@ -7,6 +7,7 @@ import { GlobalStyle } from "../styles/GlobalStyle";
 
 export const Layout = () => {
   const theme = useSelector((state: RootState) => state.themeList.theme);
+  if (!theme) return null;
   return (
     <>
       <ThemeProvider theme={theme}>
