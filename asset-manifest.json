@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/ToDoList-with-Routing-and-Redux/static/js/main.d519b69c.js",
+    "main.js": "/ToDoList-with-Routing-and-Redux/static/js/main.e3682f2f.js",
     "index.html": "/ToDoList-with-Routing-and-Redux/index.html",
-    "main.d519b69c.js.map": "/ToDoList-with-Routing-and-Redux/static/js/main.d519b69c.js.map"
+    "main.e3682f2f.js.map": "/ToDoList-with-Routing-and-Redux/static/js/main.e3682f2f.js.map"
   },
   "entrypoints": [
-    "static/js/main.d519b69c.js"
+    "static/js/main.e3682f2f.js"
   ]
 }
